@@ -3,8 +3,32 @@
 We are using mysql and mongodb to store records related to travel information of a particular city.
 
 
-
 ## Setup Steps :
+
+### Install python , Anaconda , MongoDB and Mysql as per the instructions on respective sites.
+
+### Python Setup
+
+#### install python packages
+
+* pip install -r requirements.txt
+
+### DB Setup
+
+* run database\design\setup.sql to create db schema
+* run database\schema\create_schema.py to setup schema.
+
+### Setup database collection process
+
+* run data_collection\collect_data.py to collect data from local and web to populate DB tables.
+
+### Run web Server
+
+* run web\travel_server.py to start flask server.
+
+### Client Application
+
+* To be implemented
 
 
 ##  References :
