@@ -1,4 +1,5 @@
 TRAVEL_DB_CONFIG:
+  CITY_DETAIL_URL: /Users/pankaj/dev/git/smu/database_term2/project/travelenzy/data/simplemaps_worldcities_basicv1.5/worldcities.csv
   FLUSH_BATCH_SIZE: 20000
   LOGGING:
     version: 1
@@ -25,6 +26,6 @@ TRAVEL_DB_CONFIG:
   MYSQL_DB_CONFIG:
     host: localhost
     port: 3306
-    username: traveller
-    password: traveller
-    db_name: travelengy
+    username: travellar
+    password: travellar
+    db_name: travelenzy

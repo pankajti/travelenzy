@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> City Attraction</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("p").click(function(){
+        $(this).method();
+    });
+});
+</script>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+<div class="w3-row">
+<div  class="w3-col m4">
+<div>
+    <a href="/"> Home </a>
+</div>
+    <div id ='details'>
+        <label><b>City:</b></label>{{city}} <br>
+
+        <label><b>Total Time (hours ): </b></label> {{total_time}} <br>
+        <label><b>Total Attractions:  </b></label> {{attractions|length}} <br>
+    <table>
+        <tr>
+            <th>Attraction</th>
+            <th>Time (hours)</th>
+
+        </tr>
+        {% for att in attractions %}
+        <tr>
+            <td><a href = "{{att[2]}}">{{att[0]}}</a></td>
+            <td>{{att[1]}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
+</div>
+
+<div id="map_area" class="w3-col m8">
+    this is for map
+</div>
+</div>
+</body>
+</html>
