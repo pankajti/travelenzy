@@ -2,6 +2,11 @@
 
 We are using mysql and mongodb to store records related to travel information of a particular city.
 
+## Architecture Diagram
+
+
+![arch](/Users/pankaj/dev/git/smu/database_term2/project/travelenzy/presentation/travelenzy_Arch.png)
+
 
 ## Setup Steps :
 

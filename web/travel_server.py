@@ -11,7 +11,7 @@ CORS(app)
 
 @app.route('/')
 def serve_home():
-    return 'aaaa'
+    return 'Welcome To Travelenzy. Watch this space for updates....'
 
 
 @app.route('/re')
