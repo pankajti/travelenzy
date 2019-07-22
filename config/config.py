@@ -2,7 +2,6 @@ import yaml
 import os
 import site
 
-
 TRAVEL_DB_CONFIG = {}
 packages = site.getsitepackages()
 print(os.path.dirname(os.path.abspath(__file__)))

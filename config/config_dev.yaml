@@ -29,3 +29,11 @@ TRAVEL_DB_CONFIG:
     username: travellar
     password: travellar
     db_name: travelenzy
+
+  MONGO_DB_CONFIG:
+    host: localhost
+    port: 27017
+    username: travellar
+    password: travellar
+    db_name: mydatabase
+
