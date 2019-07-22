@@ -31,9 +31,11 @@ engine=create_engine(url, pool_recycle=3600)
 def get_connection():
     return engine.connect()
 
+Session = sessionmaker(bind=engine)
+ses= Session()
+
 def get_session():
-    Session = sessionmaker(bind=engine)
-    return Session()
+    return ses
 
 
 

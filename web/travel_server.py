@@ -23,7 +23,7 @@ def serve_index():
     locations=web.get_all_locations()
     return render_template('index.html', name='pankaj', locations=locations)
 
-@app.route('/details')
+@app.route('/location/id')
 def serve_details():
     city=request.args.get('location')
     locations, total_time=web.get_all_location_details(city+' ')
@@ -33,5 +33,3 @@ def serve_details():
 
 if __name__=='__main__':
     app.run(port=8080)
-
-
