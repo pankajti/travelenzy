@@ -6,8 +6,8 @@ Base=declarative_base()
 class location(Base):
     __tablename__='location'
     id=Column(Integer,primary_key=True , autoincrement=True)
-    lat = Column(Float)
-    lon = Column(Float)
+    lat = Column(Float(12,20))
+    lon = Column(Float(12,20))
     state_id=Column(Integer,ForeignKey('state.id', ondelete='CASCADE'))
     population = Column(Integer)
     name=Column(String(200))

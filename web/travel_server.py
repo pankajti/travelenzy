@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 import json
 from flask import send_from_directory
-from services import web
+from services import web , location_service , demo_service
 from flask import request
 from flask_cors import CORS
 app= Flask(__name__)
@@ -23,12 +23,29 @@ def serve_index():
     locations=web.get_all_locations()
     return render_template('index.html', name='pankaj', locations=locations)
 
-@app.route('/location/id')
-def serve_details():
+@app.route('/film/<id>')
+def serve_film(id = id):
+    film = demo_service.get_film(int(id))
+    return render_template('film_detail.html', name='pankaj', film=film)
+
+
+@app.route('/film/<id>')
+def serve_location(id = id ):
+    film = {'name': 'madhishala'}
+    film = location_service.get_location()
+
+
+    return render_template('film_detail.html', name='pankaj', film=film)
+
+
+
+@app.route('/location/<id>')
+def serve_details(id = id):
+    print('found request for {}'.format(id))
     city=request.args.get('location')
-    locations, total_time=web.get_all_location_details(city+' ')
+    location= location_service.get_location(4)
     #return render_template('index.html', name='pankaj', details=details)
-    return render_template('attractions.html', city=city , attractions=locations, total_time=total_time)
+    return render_template('location_detail.html')
     #return  json.dumps([location[0] for location in locations])
 
 if __name__=='__main__':

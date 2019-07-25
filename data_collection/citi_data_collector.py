@@ -20,7 +20,6 @@ for idx , city in city_details.iterrows() :
     f_cnt = city['country'] if not pd.isnull(city['country']) else None
     loc.population = None if pd.isnull(city['population']) else city['population']
     cnt = l_dao.find_country_by_name(f_cnt)
-    st = l_dao.find_state_by_name(f_state)
     print('  creating for {} {} {}  '.format(loc.name, f_cnt, f_state))
 
 
@@ -30,7 +29,9 @@ for idx , city in city_details.iterrows() :
         g_dao.insert_record(c)
         cnt= [c]
 
-    if st is None or len(st) ==0  :
+    st = l_dao.find_state_by_name(f_state)
+
+    if st is None or len(st) ==0  or st[0].country_id != cnt[0].id:
         s = state()
         s.name=f_state
         s.country_id = cnt[0].id
