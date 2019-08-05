@@ -21,3 +21,4 @@ def get_db(db_name):
 
 
 print(myclient.list_database_names())
+http://mattturck.com/wp-content/uploads/2019/07/2019_Matt_Turck_Big_Data_Landscape_Final_Fullsize.png

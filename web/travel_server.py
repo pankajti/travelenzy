@@ -4,6 +4,8 @@ import json
 from flask import send_from_directory
 from services import web , location_service , demo_service
 from flask import request
+from json2html import *
+
 from flask_cors import CORS
 app= Flask(__name__)
 
@@ -26,16 +28,10 @@ def serve_index():
 @app.route('/film/<id>')
 def serve_film(id = id):
     film = demo_service.get_film(int(id))
-    return render_template('film_detail.html', name='pankaj', film=film)
+    #return render_template('film_detail.html', name='pankaj', film=film, film2 = json.dumps(film) , conv = json2html.convert)
+    return json2html.convert(json = film)
 
-
-@app.route('/film/<id>')
-def serve_location(id = id ):
-    film = {'name': 'madhishala'}
-    film = location_service.get_location()
-
-
-    return render_template('film_detail.html', name='pankaj', film=film)
+    #return json2html.convert(json = json.dumps(film))
 
 
 
